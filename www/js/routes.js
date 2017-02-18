@@ -10,7 +10,7 @@ angular.module('starter')
 			controller: 'ListagemController'
 		})
 		.state('carroescolhido',{
-			url : '/carroescolhido',
+			url : '/carroescolhido/:carro',
 			templateUrl: 'templates/carroescolhido.html',
 			controller : 'CarroEscolhidoController'
 		});
