@@ -1,15 +1,29 @@
 <ion-view>
-	<ion-nav-title>{{carroEscolhido}}</ion-nav-title>
+	<ion-nav-title>{{carroEscolhido.nome}}</ion-nav-title>
 	<ion-content>
 		<div class="card">
 			<div class="item item-divider">
 				Ótima escolha
 			</div>
 			<div class="item item-text-wrap">
-				{{carroEscolhido}}
+				{{carroEscolhido.nome}}
+				<ul class="list">
+				
+				<li class="item item-toggle" ng-repeat="acessorio in listaDeAcessorios">
+					<p>{{acessorio.nome}}</p>
+					<p>R{{acessorio.preco | currency}}</p>
+					<label class="toggle toggle-assertive">
+						<input type="checkbox" ng-model="isMarcado" ng-click="mudou(acessorio, isMarcado)">
+							<div class="track">
+								<div class="handle"></div>
+							</div>
+					</label>	
+				</li>
+
+				</ul>
 			</div>	
 			<div class="item item-divider">
-				Rodapé
+				R{{carroEscolhido.preco || currency}}
 			</div>
 		</div>
 	</ion-content>
